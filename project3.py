@@ -22,13 +22,9 @@ def main():
                     expect(title).to_contain_text(books[i], ignore_case=True, timeout=1000)
                     price = book.locator("p.price_color").inner_text()
 
-
-
-                    # Print it to the terminal
                     output_line = f"Book {i + 1}: {title.inner_text()} | Price: {price}"
                     print(f"✅ {output_line}")
 
-                    # Write it to the text file
                     file.write(output_line + "\n")
                 except AssertionError:
                     print(f"❌ Book {i + 1}: Title {title.inner_text()} does not match expected value.")
