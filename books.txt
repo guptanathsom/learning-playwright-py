@@ -1,0 +1,7 @@
+--- FIRST 5 BOOKS IN THE STORE ---
+
+Book 1: A Light in the ... | Price: £51.77
+Book 2: Tipping the Velvet | Price: £53.74
+Book 3: Soumission | Price: £50.10
+Book 4: Sharp Objects | Price: £47.82
+Book 5: Sapiens: A Brief History ... | Price: £54.23
