@@ -1,5 +1,3 @@
-from operator import and_
-
 from pytest_bdd import given, parsers, then, when,scenarios
 from playwright.sync_api import Page
 
@@ -35,9 +33,11 @@ def step_enter_credentials(page: Page):
     login_button.click()
 
 
-@then(parsers.parse('the page header should be "{Secure Area}" and the success banner should be displayed'))
+@then(parsers.parse('the page header should be "{expected_title}" and the success banner should be displayed'))
 def step_verify_title(page: Page, expected_title):
     actual_title = page.locator("h2").inner_text()
-    # login_success_message = page.locator("div.flash.success")
+    login_success_message = page.locator("div.flash.success")
+
     assert expected_title.strip() in actual_title.strip(), f"Expected '{expected_title}' to be in '{actual_title}'"
-    # assert login_success_message
+
+    assert "You logged into a secure area!" in login_success_message.inner_text()
